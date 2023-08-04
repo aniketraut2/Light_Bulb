@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #000; /* Neon black background when light is off */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    transition: background-color 0.5s ease; /* Adding transition for smooth effect */
+}
+
+body.light-on {
+    /* Sunrise color linear gradient when light is on */
+    background-image: linear-gradient(135deg, #ff8a00, #ffca00, #e6ff00, #a4ff00); /* Change to cool and professional neon colors */
+    animation: sparkle 0.5s linear infinite; /* Faster sparkling effect when light is on */
+}
+
+label {
+    position: relative;
+    width: 150px;
+    height: 75px;
+    background-color: #222;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+label input {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+label span {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    transition: .3s;
+    position: relative;
+    /* Add neon glow effect using box-shadow */
+    box-shadow: 0 0 10px rgba(255, 136, 0, 0.7), 0 0 20px rgba(255, 136, 0, 0.7), 0 0 30px rgba(255, 136, 0, 0.7), 0 0 40px rgba(255, 136, 0, 0.7), 0 0 70px rgba(255, 136, 0, 0.7), 0 0 80px rgba(255, 136, 0, 0.7), 0 0 100px rgba(255, 136, 0, 0.7);
+}
+
+label input:checked ~ span {
+    transform: translateX(75px);
+}
+
+label span i {
+    font-size: 30px;
+    color: #666;
+}
+
+label input:checked ~ span i {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7);
+    color: #fff;
+}
+
+.bulb {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 450px;
+    background: url(bulb.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .2s;
+}
+
+input:checked ~ .bulb {
+    background: url(bulb_on.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
